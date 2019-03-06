@@ -18,7 +18,10 @@ underscore-cli
 Add the following to your darkpaycoin.conf of your wallet and change the ... for values of your own:  
 rpcallow=127.0.0.1  
 rpcuser=...  
-rpcpassword=...  
+rpcpassword=...
+rpcport=6668
+server=1
+listen=1
 
 Restart your wallet.  
 
