@@ -19,7 +19,7 @@ Add the following to your darkpaycoin.conf of your wallet and change the ... for
 rpcallow=127.0.0.1  
 rpcuser=...  
 rpcpassword=...  
-rpcport=6668
+rpcport=6668  
 server=1  
 listen=1  
 
