@@ -20,8 +20,8 @@ rpcallow=127.0.0.1
 rpcuser=...  
 rpcpassword=...
 rpcport=6668
-server=1
-listen=1
+server=1  
+listen=1  
 
 Restart your wallet.  
 
