@@ -28,13 +28,12 @@ if  [[ $(darkpaycoin-cli -datadir=/root/.darkpaycoin$i masternode status | under
     fi
 done
 
-load=$(cat /proc/loadavg | awk '{$1=$1};1' | cut -d " " -f 3)
+load=$(cat /proc/loadavg | awk '{$1=$1};1' | cut -d " " -f 2)
 load_int=$(echo $load | cut -d . -f 1)
 message=""
 
 if [[ "$load_int" -gt "$load_treshold" ]]; then
-        message="VPS $vps_name has load of $load
-"
+	message="VPS $vps_name has had an average load of $load for the last 5 minutes"
 fi
 
 if [[ "$count" -ne "0" ]]; then
