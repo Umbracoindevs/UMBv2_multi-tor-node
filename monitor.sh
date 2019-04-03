@@ -11,19 +11,13 @@ load_treshold="10"
 
 count=0
 
-if  [[ $(darkpaycoin-cli -datadir=/root/.darkpaycoin masternode status | underscore select ".status" --outfmt text) = "4" ]] ; then
-    array[0]="4"
-else
-    array[0]="0"
+if  [[ $(darkpaycoin-cli -datadir=/root/.darkpaycoin masternode status 2>&1 | grep error | wc -l) != "0" ]] ; then
     count=$((count + 1))
 fi
 
 for i in {1..17}
 do
-if  [[ $(darkpaycoin-cli -datadir=/root/.darkpaycoin$i masternode status | underscore select ".status" --outfmt text) = "4" ]] ; then
-        array[$i]="4"
-    else
-        array[$i]="0"
+    if  [[ $(darkpaycoin-cli -datadir=/root/.darkpaycoin$i masternode status 2>&1 | grep error | wc -l) != "0" ]] ; then
         count=$((count + 1))
     fi
 done
