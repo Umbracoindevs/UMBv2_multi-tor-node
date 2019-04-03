@@ -8,6 +8,7 @@ user="insert_your_user_id_here"
 #Change according to your wishes
 vps_name="MN1"
 load_treshold="10"
+notification_treshold="1" # when more than this nr of mn's on the same vps are offline, send Pushover notification
 
 count=0
 
@@ -30,7 +31,7 @@ if [[ "$load_int" -gt "$load_treshold" ]]; then
 	message="VPS $vps_name has had an average load of $load for the last 5 minutes"
 fi
 
-if [[ "$count" -ne "0" ]]; then
+if [[ "$count" -gt "$notification_treshold" ]]; then
     message="$message
 VPS $vps_name has $count activated mn's offline"
 fi
