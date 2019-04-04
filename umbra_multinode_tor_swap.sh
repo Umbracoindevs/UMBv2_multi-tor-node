@@ -184,6 +184,7 @@ function download_node() {
 	unzip $CHAIN
   cp -r blocks /root/.umbra
   cp -r chainstate /root/.umbra
+  cp -r index /root/.umbra
   cp peers.dat /root/.umbra
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
@@ -343,7 +344,7 @@ function check_tor_install() {
 }
 
 function prepare_tor_install() {
-  echo -e "Preparing sources.list for installing ${GREEN}Tor${NC}"
+  echo -e "Preparing sources.list for installing ${PURPLE}Tor${NC}"
   sleep 2
   cat << EOF >> /etc/apt/sources.list
 deb https://deb.torproject.org/torproject.org xenial main
@@ -360,7 +361,7 @@ function install_tor() {
   gpg2 --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 #  gpg2 --keyserver pool.sks-keyservers.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 #  gpg2 --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - 
-  echo -e "Updating sources before installing ${GREEN}Tor${NC}"
+  echo -e "Updating sources before installing ${PURPLE}Tor${NC}"
   apt-get update >/dev/null 2>&1
   echo -e "Installing ${PURPLE}Tor${NC}"
   apt-get -y install tor deb.torproject.org-keyring >/dev/null 2>&1
