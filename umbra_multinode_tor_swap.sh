@@ -184,7 +184,6 @@ function download_node() {
 	unzip $CHAIN
   cp -r blocks /root/.umbra
   cp -r chainstate /root/.umbra
-  cp -r index /root/.umbra
   cp peers.dat /root/.umbra
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
