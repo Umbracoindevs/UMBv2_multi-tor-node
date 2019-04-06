@@ -33,3 +33,7 @@ systemctl stop umbra1.service
 systemctl start umbra.service
 systemctl start umbra1.service
 ```
+```
+Umbracoindevs  BTC: 19D8BLAx3YCJme5GxNaUEtfKfHpBEbMX5L
+Umbracoindevs  BCH: qp5zn73h8sur7ashfzvx4ykswu3rzx388uepz6gr23
+```
