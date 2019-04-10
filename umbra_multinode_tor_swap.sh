@@ -632,7 +632,7 @@ if [ $(free | awk '/^Swap:/ {exit !$2}') ] || [ ! -f "/swapfile" ];then
     echo "* No swap image, creating it!"
     # needed because low ram
     rm -f /swapfile
-    sudo dd if=/dev/zero of=/swapfile bs=1024 count=3100000
+    sudo dd if=/dev/zero of=/swapfile bs=1024 count=5242880
     mkswap /swapfile
 	sudo chmod 0600 /swapfile
     swapon /swapfile
